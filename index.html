@@ -1,0 +1,32 @@
+<html>
+    <head>
+    <title>name prediction</title>
+    </head>
+    <body>
+        <input type="text" id = "name" name = "name" placeholder = "enter name">
+        <button id = "submit" type="submit">submit</button>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.js"
+        integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+        crossorigin="anonymous"></script>
+        <script>
+            $("#submit").on('click',function(req,res){
+                $.ajax({
+                type: "POST",
+                data: {
+                    name: $('input[name="name"]').val()
+                   
+                },
+                
+                        });
+                        console.log('hello');
+                    });
+    </script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    crossorigin="anonymous"></script>
+    
+  
+    </body>
+</html>
