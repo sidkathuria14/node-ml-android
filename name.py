@@ -14,7 +14,7 @@ from nltk.corpus import stopwords
 
 
 # In[34]
-input_name = raw_input("enter name: ");
+input_name = raw_input("");
 print(input_name)
 # nltk.download()
 names = ( [(name,'male') for name in names.words('male.txt')] +
