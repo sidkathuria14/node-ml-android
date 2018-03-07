@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-
+var PORT = process.env.PORT || 3000; 
 // app.use(express.bodyParser());
 var PythonShell = require('python-shell');
 // pyshell.send('frank');
@@ -75,5 +75,5 @@ res.sendFile(__dirname + '/index.html');
 
 });
 
-app.listen(3000);
+app.listen(PORT);
 console.log("started on : " + 3000);
