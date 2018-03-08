@@ -5,7 +5,7 @@
 
 import sys
 # import numpy as np
-import pandas as pd
+# import pandas as pd
 from nltk.corpus import names
 import nltk
 import nltk.classify.util
