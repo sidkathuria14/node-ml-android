@@ -4,7 +4,7 @@
 # In[33]:
 
 import sys
-# import numpy as np
+import numpy as np
 # import pandas as pd
 from nltk.corpus import names
 import nltk
