@@ -43,10 +43,9 @@ pyshell.on('message', function (message) {
   console.log(message);
 result = message;
 console.log(name + " is a " + result + " name");
-
-
-});
 res.send(name + " is a " + result + " name");
+});
+
 pyshell.end(function (err,code,signal) {
   if (err) throw err;
   console.log('The exit code was: ' + code);
