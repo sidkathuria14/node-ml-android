@@ -5,13 +5,13 @@ package com.example.sidkathuria14.namepredictor.model;
  */
 
 public class Result {
-    String result;
+    String gender;
 
     public Result(String result) {
-        this.result = result;
+        this.gender = result;
     }
 
     public String getResult() {
-        return result;
+        return gender;
     }
 }

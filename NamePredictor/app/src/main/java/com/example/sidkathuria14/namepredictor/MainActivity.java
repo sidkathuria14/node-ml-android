@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 EditText etInput;Button btnSubmit;TextView tvResult;
 public static final String TAG = "names";
 String address = "https://pure-harbor-90282.herokuapp.com/";
-String ip = "http://192.168.1.9:3000/";
+String ip = "http://192.168.1.7:3000/";
 String name;
     Retrofit retrofit;
     @Override
@@ -36,6 +36,7 @@ String name;
     btnSubmit = (Button)findViewById(R.id.btnSubmit);
     etInput = (EditText)findViewById(R.id.etInput);
     tvResult = (TextView)findViewById(R.id.tvResult);
+    tvResult.setText("");
 
 
 
@@ -67,17 +68,29 @@ name = etInput.getText().toString();
                     .build();
 
              NamesApi namesApi = retrofit.create(NamesApi.class);
-           Callback<String> callback = new Callback<String>() {
+//           Callback<String> callback = new Callback<String>() {
+//                @Override
+//                public void onResponse(Call<String> call, Response<String> response) {
+//                    Log.d(TAG, "onResponse: " + response.body().toString());
+//                }
+//
+//                @Override
+//                public void onFailure(Call<String> call, Throwable t) {
+//                    Log.d(TAG, "onFailure: ");
+//                    Log.d(TAG, "onFailure: " + t.getMessage() + t.getCause());
+//
+//                }
+//            };
+            Callback<Result> callback = new Callback<Result>() {
                 @Override
-                public void onResponse(Call<String> call, Response<String> response) {
-                    Log.d(TAG, "onResponse: " + response.body().toString());
+                public void onResponse(Call<Result> call, Response<Result> response) {
+                    Log.d(TAG, "onResponse: ");
+                    Log.d(TAG, "onResponse: " + response.body().getResult());
+                    tvResult.setText(response.body().getResult());
                 }
-
                 @Override
-                public void onFailure(Call<String> call, Throwable t) {
+                public void onFailure(Call<Result> call, Throwable t) {
                     Log.d(TAG, "onFailure: ");
-                    Log.d(TAG, "onFailure: " + t.getMessage() + t.getCause());
-
                 }
             };
             namesApi.getPrediction(name).enqueue(callback);

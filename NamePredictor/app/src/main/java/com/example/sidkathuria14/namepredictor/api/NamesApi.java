@@ -15,5 +15,5 @@ import retrofit2.http.Path;
 
 public interface NamesApi {
     @GET("names/{name}")
-    Call<String> getPrediction(@Path("name")String name);
+    Call<Result> getPrediction(@Path("name")String name);
 }
