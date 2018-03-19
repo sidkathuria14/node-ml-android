@@ -6,8 +6,10 @@
 import sys
 # import numpy as np
 # import pandas as pd
-from nltk.corpus import names
 import nltk
+nltk.download('names')
+# from nltk.corpus import names
+
 import nltk.classify.util
 from nltk.classify import NaiveBayesClassifier
 from nltk.corpus import stopwords
