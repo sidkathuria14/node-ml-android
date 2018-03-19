@@ -50,7 +50,8 @@ res.write(JSON.stringify({gender: result}));
 });
 
 pyshell.end(function (err,code,signal) {
-  if (err) throw err;
+  // if (err) throw err;
+  if(err) console.log(err);
   console.log('The exit code was: ' + code);
   console.log('The exit signal was: ' + signal);
   console.log('finished');
