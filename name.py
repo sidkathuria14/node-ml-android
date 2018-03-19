@@ -7,8 +7,8 @@ import sys
 # import numpy as np
 # import pandas as pd
 import nltk
-nltk.download('names')
-# from nltk.corpus import names
+# nltk.download('names')
+from nltk.corpus import names
 
 import nltk.classify.util
 from nltk.classify import NaiveBayesClassifier
